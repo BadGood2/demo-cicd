@@ -23,11 +23,11 @@ jobs:
       # Build and push Auth API image
       - name: Build and push Auth API Docker image
         run: |
-          docker build -t mdnaseem/kub-auth:v3 -f auth-api/Dockerfile auth-api
-          docker push mdnaseem/kub-auth:v3
+          docker build -t mdnaseem/kub-auth:v${{ github.run_number }} -f auth-api/Dockerfile auth-api
+          docker push mdnaseem/kub-auth:v${{ github.run_number }}
 
       # Build and push Users API image
       - name: Build and push Users API Docker image
         run: |
-          docker build -t mdnaseem/kub-user:v3 -f users-api/Dockerfile users-api
-          docker push mdnaseem/kub-user:v3
+          docker build -t mdnaseem/kub-user:v${{ github.run_number }} -f users-api/Dockerfile users-api
+          docker push mdnaseem/kub-user:v${{ github.run_number }}
